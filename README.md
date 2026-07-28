@@ -1,27 +1,44 @@
 # d10SRD
 
-Scaled d20-to-d10 resolution with the published ability table and confirmed threats.
+The audience-facing rules commons and independent executable reference for the
+Ground Zero Games Base-10 line.
 
-This is an independent Ground Zero Games server-card port:
+The current alpha carries the controlling conversion:
 
-- repository: `rustycohl/d10SRD`
-- Page: https://rustycohl.github.io/d10SRD/
-- flag: `DEDICATED_REPO_PAGE`
-- status: `alpha`
-- dependencies: none at runtime
+```text
+d10 + ability modifier + skill ranks + situational modifier >= difficulty
+```
 
-This port proves the core check only; setting and franchise material live elsewhere.
+- d20 difficulty converts with `ceiling(DC / 2)`.
+- Check-facing modifiers scale to the published d10 table.
+- Natural 10 and natural 1 are threats; a second d10 confirms on 6+.
+- Skill ranks use 0–10.
+- The tactical bridge has one 10 AP authority; cards modify costs, never the
+  pool itself.
 
-## Verify
+The public Page combines a readable rules reference, interactive check
+resolver, and the port’s executable conformance test.
+
+## First public release
+
+The initial audience-facing set is:
+
+1. `BattleStarSol` — themed clean-tab launch page;
+2. `X-Command` — standalone tactical-generator product demo; and
+3. `d10SRD` — this rules reference.
+
+The remaining independent Pages stay live for development and backend testing.
+
+## Run
 
 ```text
 npm test
 ```
 
-The Page runs the same browser-compatible self-test. It has no external
-runtime dependency and does not introduce game-server authority.
+Serve `site/` with any static server.
 
 ## License
 
-Version 0.1 software is available under MIT or Apache-2.0, at your option.
-Original documentation is CC BY 4.0. See the license files.
+The current original rules document and documentation are CC BY 4.0. The
+reference implementation is available under MIT or Apache-2.0. Earlier d10 SRD
+material already released under CC0 remains CC0; nothing here withdraws it.

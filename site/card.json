@@ -1,7 +1,7 @@
 {
   "schema": "gzg.server-card/0.1",
   "id": "d10SRD",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.2",
   "status": "alpha",
   "tier": 3,
   "purpose": "Scaled d20-to-d10 resolution with the published ability table and confirmed threats.",

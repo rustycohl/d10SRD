@@ -4,46 +4,205 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#090b0f">
-    <meta name="description" content="d10SRD independent Ground Zero Games server-card port.">
+    <meta
+      name="description"
+      content="d10SRD — the open, setting-neutral Base-10 rules reference and executable conformance page."
+    >
     <link rel="stylesheet" href="./styles.css">
-    <title>d10SRD // Independent Server Card</title>
+    <title>d10SRD // System Reference</title>
   </head>
-  <body style="--accent:#d6ff2f">
-    <header><span>GROUND ZERO GAMES // SERVER CARD</span><b>0.1.0-alpha.1</b></header>
-    <main>
-      <section class="hero">
+  <body>
+    <a class="skip-link" href="#reference">Skip to the rules reference</a>
+    <div class="grid-field" aria-hidden="true"></div>
+
+    <header class="topbar">
+      <a class="brand" href="#top">
+        <span>d10</span>
+        <span>
+          <b>d10SRD</b>
+          <small>RULES COMMONS</small>
+        </span>
+      </a>
+      <span class="release">PUBLIC ALPHA // OPEN REFERENCE</span>
+      <b>0.1.0-alpha.2</b>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-labelledby="hero-title">
         <div>
-          <p class="eyebrow">INDEPENDENT PORT // TIER 3</p>
-          <h1>d10SRD</h1>
-          <p class="purpose">Scaled d20-to-d10 resolution with the published ability table and confirmed threats.</p>
-          <p class="boundary">This port proves the core check only; setting and franchise material live elsewhere.</p>
+          <p class="eyebrow">ONE DIE // SCALED LEGACY // BASE-10 BRIDGE</p>
+          <h1 id="hero-title">d10<span>SRD</span></h1>
+          <p class="lead">
+            The d20 legacy curve, compressed to one ten-sided die without
+            throwing away sixteen years of calibrated structure.
+          </p>
+          <p class="boundary">
+            Setting-neutral rules. No required world, faction, chain, account,
+            or game server.
+          </p>
         </div>
-        <div class="flag">DEDICATED REPO<br>DEDICATED PAGE<br>NO GAME SERVER</div>
+        <div class="formula" aria-label="Core check formula">
+          <span>CORE CHECK</span>
+          <strong>d10 + ability + skill + situation</strong>
+          <i>≥ DIFFICULTY CLASS</i>
+        </div>
       </section>
-      <section class="grid">
-        <article class="panel">
-          <p class="eyebrow">PORT CONTRACT</p>
-          <h2>LIVE ALPHA</h2>
-          <dl>
-            <div><dt>repository</dt><dd>rustycohl/d10SRD</dd></div>
-            <div><dt>page</dt><dd>rustycohl.github.io/d10SRD/</dd></div>
-            <div><dt>flag</dt><dd>DEDICATED_REPO_PAGE</dd></div>
-            <div><dt>authority</dt><dd>deterministic local evidence</dd></div>
-          </dl>
-          <div class="deps"><span>NO LIVE RUNTIME DEPENDENCY</span></div>
-        </article>
-        <article class="panel">
-          <p class="eyebrow">EXECUTABLE EVIDENCE</p>
-          <h2>SELF-TEST</h2>
-          <button id="run" type="button">RUN PORT SELF-TEST</button>
-          <pre class="result" id="result" data-state="idle">WAITING…</pre>
-        </article>
+
+      <section class="truth-strip" aria-label="Rules boundaries">
+        <span><b>DIE</b> 1–10</span>
+        <span><b>SKILLS</b> 0–10</span>
+        <span><b>AP BRIDGE</b> 10</span>
+        <span><b>SETTING</b> none</span>
+      </section>
+
+      <section class="reference" id="reference" aria-labelledby="reference-title">
+        <header>
+          <div>
+            <p class="eyebrow">CURRENT CONTROLLING CONVERSION</p>
+            <h2 id="reference-title">THE SCALED CORE</h2>
+          </div>
+          <p>
+            Halve d20 difficulty and check-facing modifiers, then round by the
+            published tables. Do not divide unrelated quantities such as
+            health, damage, movement, currency, or time.
+          </p>
+        </header>
+
+        <div class="rule-grid">
+          <article>
+            <span class="rule-index">01</span>
+            <h3>DIFFICULTY</h3>
+            <p><code>d10 DC = ceiling(d20 DC / 2)</code></p>
+            <table>
+              <thead><tr><th>TIER</th><th>d20</th><th>d10</th></tr></thead>
+              <tbody>
+                <tr><td>Easy</td><td>5</td><td>3</td></tr>
+                <tr><td>Standard</td><td>10</td><td>5</td></tr>
+                <tr><td>Challenging</td><td>15</td><td>8</td></tr>
+                <tr><td>Difficult</td><td>20</td><td>10</td></tr>
+                <tr><td>Extreme</td><td>25+</td><td>13+</td></tr>
+              </tbody>
+            </table>
+          </article>
+
+          <article>
+            <span class="rule-index">02</span>
+            <h3>ABILITY</h3>
+            <p>Scores remain 4–20. Only their check-facing modifier scales.</p>
+            <table>
+              <thead><tr><th>SCORE</th><th>d10 MOD</th></tr></thead>
+              <tbody>
+                <tr><td>4–5</td><td>−2</td></tr>
+                <tr><td>6–9</td><td>−1</td></tr>
+                <tr><td>10–11</td><td>0</td></tr>
+                <tr><td>12–15</td><td>+1</td></tr>
+                <tr><td>16–19</td><td>+2</td></tr>
+                <tr><td>20</td><td>+3</td></tr>
+              </tbody>
+            </table>
+          </article>
+
+          <article>
+            <span class="rule-index">03</span>
+            <h3>CRITICAL THREATS</h3>
+            <p>
+              A natural 10 or 1 is a threat. Roll a second d10; a 6+ confirms.
+              The two-step rule restores the effective critical rate to 5%.
+            </p>
+            <div class="critical-diagram">
+              <span>NAT 10 / NAT 1</span>
+              <b>→</b>
+              <span>CONFIRM 6+</span>
+              <b>→</b>
+              <span>CRITICAL</span>
+            </div>
+          </article>
+
+          <article>
+            <span class="rule-index">04</span>
+            <h3>BASE-10 ACTION BRIDGE</h3>
+            <p>
+              xCommand’s 10 AP pool and the tabletop action scale are the same
+              resource at different resolutions. ActionEconomy owns the pool;
+              cards carry modifiers, never replacement AP totals.
+            </p>
+            <a href="https://rustycohl.github.io/X-Command/">
+              OPEN X-COMMAND DEMO ↗
+            </a>
+          </article>
+        </div>
+      </section>
+
+      <section class="workbench" aria-labelledby="workbench-title">
+        <header>
+          <div>
+            <p class="eyebrow">EXECUTABLE REFERENCE</p>
+            <h2 id="workbench-title">RESOLVE A CHECK</h2>
+          </div>
+          <span>RESULTS USE THE SAME MODULE AS THE CONFORMANCE TEST.</span>
+        </header>
+
+        <div class="workbench-grid">
+          <form id="check-form">
+            <label>
+              <span>ROLL</span>
+              <input id="check-roll" type="number" min="1" max="10" value="10">
+            </label>
+            <label>
+              <span>CONFIRMATION</span>
+              <input id="check-confirmation" type="number" min="1" max="10" value="6">
+            </label>
+            <label>
+              <span>ABILITY SCORE</span>
+              <input id="check-ability" type="number" min="4" max="20" value="12">
+            </label>
+            <label>
+              <span>SKILL RANKS</span>
+              <input id="check-skill" type="number" min="0" max="10" value="2">
+            </label>
+            <label>
+              <span>SITUATIONAL</span>
+              <input id="check-situational" type="number" min="-10" max="10" value="0">
+            </label>
+            <label>
+              <span>DIFFICULTY</span>
+              <input id="check-dc" type="number" min="1" max="30" value="13">
+            </label>
+            <button type="submit">RESOLVE CHECK</button>
+          </form>
+
+          <div class="check-result" id="check-result" data-outcome="idle">
+            <span>READY</span>
+            <strong>d10 + modifiers vs. DC</strong>
+            <small>Natural threats use the confirmation field.</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="proof" aria-labelledby="proof-title">
+        <div>
+          <p class="eyebrow">PORT IN A STORM // DEDICATED_REPO_PAGE</p>
+          <h2 id="proof-title">CONFORMANCE PROOF</h2>
+          <p>
+            This Page is also the independent d10SRD protocol port. The
+            browser test checks the published ability table, scaled difficulty
+            tiers, and confirmed natural-10 rule.
+          </p>
+          <button id="run" type="button">RUN BROWSER SELF-TEST</button>
+        </div>
+        <pre id="result" data-state="idle">WAITING…</pre>
       </section>
     </main>
+
     <footer>
-      <span>d10SRD // PORT IN A STORM</span>
-      <a href="./card.json">CARD.JSON</a>
+      <span>d10SRD // CREATIVE COMMONS RULES REFERENCE</span>
+      <nav aria-label="Reference links">
+        <a href="https://github.com/rustycohl/d10SRD/blob/main/SRD.md">READ SRD</a>
+        <a href="./card.json">CARD.JSON</a>
+        <a href="https://github.com/rustycohl/d10SRD">SOURCE</a>
+      </nav>
     </footer>
+
     <script type="module" src="./app.mjs"></script>
   </body>
 </html>

@@ -1,10 +1,10 @@
 {
   "name": "d10srd",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.2",
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node --test"
+    "test": "node --test tests/port.test.mjs tests/publication.test.mjs"
   },
   "license": "(MIT OR Apache-2.0)"
 }
