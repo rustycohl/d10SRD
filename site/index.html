@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#090b0f">
+    <meta name="description" content="d10SRD independent Ground Zero Gaming server-card port.">
+    <link rel="stylesheet" href="./styles.css">
+    <title>d10SRD // Independent Server Card</title>
+  </head>
+  <body style="--accent:#d6ff2f">
+    <header><span>GROUND ZERO GAMING // SERVER CARD</span><b>0.1.0-alpha.1</b></header>
+    <main>
+      <section class="hero">
+        <div>
+          <p class="eyebrow">INDEPENDENT PORT // TIER 3</p>
+          <h1>d10SRD</h1>
+          <p class="purpose">Scaled d20-to-d10 resolution with the published ability table and confirmed threats.</p>
+          <p class="boundary">This port proves the core check only; setting and franchise material live elsewhere.</p>
+        </div>
+        <div class="flag">DEDICATED REPO<br>DEDICATED PAGE<br>NO GAME SERVER</div>
+      </section>
+      <section class="grid">
+        <article class="panel">
+          <p class="eyebrow">PORT CONTRACT</p>
+          <h2>LIVE ALPHA</h2>
+          <dl>
+            <div><dt>repository</dt><dd>rustycohl/d10SRD</dd></div>
+            <div><dt>page</dt><dd>rustycohl.github.io/d10SRD/</dd></div>
+            <div><dt>flag</dt><dd>DEDICATED_REPO_PAGE</dd></div>
+            <div><dt>authority</dt><dd>deterministic local evidence</dd></div>
+          </dl>
+          <div class="deps"><span>NO LIVE RUNTIME DEPENDENCY</span></div>
+        </article>
+        <article class="panel">
+          <p class="eyebrow">EXECUTABLE EVIDENCE</p>
+          <h2>SELF-TEST</h2>
+          <button id="run" type="button">RUN PORT SELF-TEST</button>
+          <pre class="result" id="result" data-state="idle">WAITING…</pre>
+        </article>
+      </section>
+    </main>
+    <footer>
+      <span>d10SRD // PORT IN A STORM</span>
+      <a href="./card.json">CARD.JSON</a>
+    </footer>
+    <script type="module" src="./app.mjs"></script>
+  </body>
+</html>
