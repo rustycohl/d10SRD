@@ -2,7 +2,7 @@
 
 Scaled d20-to-d10 resolution with the published ability table and confirmed threats.
 
-This is an independent Ground Zero Gaming server-card port:
+This is an independent Ground Zero Games server-card port:
 
 - repository: `rustycohl/d10SRD`
 - Page: https://rustycohl.github.io/d10SRD/
